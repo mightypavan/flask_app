@@ -1,6 +1,6 @@
 Flask==3.0.3
 pandas==2.2.2
-requests==2.23.3
+requests
 bs4==0.0.2
 lxml==5.2.2
 gunicorn
