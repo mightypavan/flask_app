@@ -66,7 +66,7 @@ def track():
     email = request.form['email']
     target_price = float(request.form['target_price'])
 
-    #price = get_price(product_url)
+    price = 1200000
     if price < target_price:
         send_email(email, product_url, price)
         end = time.time()
