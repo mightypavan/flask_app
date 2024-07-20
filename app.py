@@ -18,7 +18,15 @@ EMAIL_PASSWORD = 'usod xurz pkes scha'
 
 def get_price(product_url):
     
-    response = requests.get(product_url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36",
+        "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8"
+    }
+    proxies = {
+     "http": "http://10.10.10.10:8000",
+     "https": "http://10.10.10.10:8000",
+    }
+    response = requests.get(product_url, headers=headers, proxies=proxies)
     soup = BeautifulSoup(response.content, 'lxml')
 
     # Extracting the price
